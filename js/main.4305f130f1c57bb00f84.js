@@ -9536,7 +9536,7 @@ module.exports = __webpack_require__.p + "assets/images/flags-d89ee2669db63c9095
 /******/ 	
 /******/ 	/* webpack/runtime/publicPath */
 /******/ 	(() => {
-/******/ 		__webpack_require__.p = "/";
+/******/ 		__webpack_require__.p = "/benzospell/";
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/jsonp chunk loading */
