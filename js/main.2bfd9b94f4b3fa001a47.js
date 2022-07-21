@@ -8322,7 +8322,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, ".formats{background:#f9fcff url(" + __
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "html{font-family:\"Open Sans\",sans-serif}body{overflow-x:hidden}.title{font-size:40px;margin-bottom:40px;color:#0a1524;font-weight:bold;text-align:center}.wrapper{max-width:1080px;margin:0 auto}.line{width:66px;height:6px;margin:0 auto 55px;background:#399fdb;opacity:0}.row{display:flex;flex-wrap:wrap;justify-content:center;color:#0a1524}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "html{font-family:\"Open Sans\",sans-serif}body{overflow-x:hidden}.main{min-height:calc(100vh - 75px - 71.2px)}.title{font-size:40px;margin-bottom:40px;color:#0a1524;font-weight:bold;text-align:center}.wrapper{max-width:1080px;margin:0 auto}.line{width:66px;height:6px;margin:0 auto 55px;background:#399fdb;opacity:0}.row{display:flex;flex-wrap:wrap;justify-content:center;color:#0a1524}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -13512,6 +13512,21 @@ function Capabilities() {
 }
 
 
+;// CONCATENATED MODULE: ./src/js/components/Main.tsx
+
+
+
+
+
+
+
+function Main() {
+  return /*#__PURE__*/react.createElement("div", {
+    className: "main"
+  }, /*#__PURE__*/react.createElement(TopSection, null), /*#__PURE__*/react.createElement(Guide, null), /*#__PURE__*/react.createElement(Formats, null), /*#__PURE__*/react.createElement(Advantages, null), /*#__PURE__*/react.createElement(Capabilities, null));
+}
+
+
 ;// CONCATENATED MODULE: ./src/js/components/Footer.tsx
 
 
@@ -13538,27 +13553,14 @@ function Footer() {
 }
 
 
-;// CONCATENATED MODULE: ./src/js/components/Main.tsx
-
-
-
-
-
-
-
-
-function Main() {
-  return /*#__PURE__*/react.createElement(react.Fragment, null, /*#__PURE__*/react.createElement(TopSection, null), /*#__PURE__*/react.createElement(Guide, null), /*#__PURE__*/react.createElement(Formats, null), /*#__PURE__*/react.createElement(Advantages, null), /*#__PURE__*/react.createElement(Capabilities, null), /*#__PURE__*/react.createElement(Footer, null));
-}
-
-
 ;// CONCATENATED MODULE: ./src/js/App.tsx
 
 
 
 
+
 function App() {
-  return /*#__PURE__*/react.createElement(react.Fragment, null, /*#__PURE__*/react.createElement(Header, null), /*#__PURE__*/react.createElement(Main, null));
+  return /*#__PURE__*/react.createElement(react.Fragment, null, /*#__PURE__*/react.createElement(Header, null), /*#__PURE__*/react.createElement(Main, null), /*#__PURE__*/react.createElement(Footer, null));
 }
 
 
