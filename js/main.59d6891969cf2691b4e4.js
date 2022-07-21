@@ -8403,7 +8403,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, ".top-section{min-height:100vh;backgrou
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".guide{background:#fafafa}.guide__inner{display:flex;flex-direction:column;align-items:center;justify-content:space-between}.guide__title{margin-top:80px;opacity:0;transition:all .3s}@media screen and (max-width: 765px){.guide__title{font-size:28px}}.guide__item{transition:all .3s;border-radius:4px;box-sizing:border-box;padding-top:20px;padding-bottom:6%;text-align:center;flex:1 0 22%;margin-bottom:40px;margin-right:10px;margin-left:10px}.guide__item_1{transform:translate(-700%)}.guide__item_2{transform:translate(700%)}.guide__item_3{transform:translate(-700%)}.guide__item_4{transform:translate(700%)}@media screen and (max-width: 765px){.guide__item{flex:1 0 46%}}@media screen and (max-width: 517px){.guide__item{flex:1 0 100%}}.guide__item:hover{background-color:#fff;box-shadow:2px 2px 20px 20px rgba(0,0,0,.04)}.guide__item .guide__img{height:89px;margin-bottom:25px}.guide__item .guide__descr{color:dimgray;line-height:1.4;display:flex;align-items:center;justify-content:center;flex-direction:column;height:92px;width:80%;margin:0 auto;margin-bottom:0px}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".guide{background:#fafafa}.guide__inner{display:flex;flex-direction:column;align-items:center;justify-content:space-between}.guide__title{margin-top:80px;opacity:0;transition:all .3s}@media screen and (max-width: 765px){.guide__title{font-size:28px}}.guide__item{transition:all .3s;border-radius:4px;box-sizing:border-box;padding-top:20px;padding-bottom:6%;text-align:center;flex:1 0 22%;margin-bottom:40px;margin-right:10px;margin-left:10px;opacity:0}.guide__item_1{transform:translate(-700%)}.guide__item_2{transform:translate(700%)}.guide__item_3{transform:translate(-700%)}.guide__item_4{transform:translate(700%)}@media screen and (max-width: 765px){.guide__item{flex:1 0 46%}}@media screen and (max-width: 517px){.guide__item{flex:1 0 100%}}.guide__item:hover{background-color:#fff;box-shadow:2px 2px 20px 20px rgba(0,0,0,.04)}.guide__item .guide__img{height:89px;margin-bottom:25px}.guide__item .guide__descr{color:dimgray;line-height:1.4;display:flex;align-items:center;justify-content:center;flex-direction:column;height:92px;width:80%;margin:0 auto;margin-bottom:0px}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -12972,7 +12972,7 @@ var scrollMagick = function scrollMagick() {
 
   for (var i = 1; i <= 4; i++) {
     var scene = new (ScrollMagic_default()).Scene({
-      triggerElement: "#title_animation"
+      triggerElement: ".guide__item_".concat(i == 1 ? 1 : i - 1)
     });
     if (i % 2 != 0) scene.setClassToggle(".guide__item_".concat(i), "swipeOutLeft");else scene.setClassToggle(".guide__item_".concat(i), "swipeOutRight");
     scene.addTo(controller);
