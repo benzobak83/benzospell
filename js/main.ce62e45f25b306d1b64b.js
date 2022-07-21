@@ -12965,7 +12965,8 @@ var scrollMagick = function scrollMagick() {
   var activateAnim = function activateAnim(trigger, selector, nameAnim) {
     {
       var scene = new (ScrollMagic_default()).Scene({
-        triggerElement: trigger
+        triggerElement: trigger,
+        offset: -50
       }); // trigger animation by adding a css class
 
       scene.setClassToggle(selector, nameAnim);
