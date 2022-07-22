@@ -13252,12 +13252,115 @@ function Header() {
 }
 
 
-;// CONCATENATED MODULE: ./src/js/components/TopSection.tsx
+;// CONCATENATED MODULE: ./src/js/components/FormFile.tsx
 
 
 const imgUpload = __webpack_require__(809);
 
-function TopSection() {
+function FormFile(props) {
+  const {
+    handlerFormBtn
+  } = props;
+  const [form, setForm] = (0,react.useState)({
+    file: '',
+    language: 'rus'
+  });
+  const formData = new FormData();
+
+  const handleInput = ({
+    target
+  }) => {
+    switch (target.name) {
+      case 'window-lang':
+        setForm(prevCount => {
+          return { ...prevCount,
+            language: target.value
+          };
+        });
+        break;
+
+      case 'file':
+        setForm(prevCount => {
+          return { ...prevCount,
+            file: target.files[0]
+          };
+        });
+        break;
+
+      default:
+        break;
+    }
+  };
+
+  (0,react.useEffect)(() => {
+    formData.append('file', form.file);
+    formData.append('window-lang', form.language);
+  }, [form]);
+  return /*#__PURE__*/react.createElement("form", {
+    className: "window"
+  }, /*#__PURE__*/react.createElement("div", {
+    className: "window__helper"
+  }, "\u0417\u0430\u0433\u0440\u0443\u0437\u0438\u0442\u0435 \u0444\u0430\u0439\u043B \u0444\u043E\u0440\u043C\u0430\u0442\u0430 JPG \u0438 \u0440\u0430\u0441\u043F\u043E\u0437\u043D\u0430\u0439\u0442\u0435 \u0441\u043E\u0434\u0435\u0440\u0436\u0430\u0449\u0438\u0439\u0441\u044F \u0432 \u043D\u0451\u043C \u0442\u0435\u043A\u0441\u0442 \u0434\u043B\u044F \u0434\u0430\u043B\u044C\u043D\u0435\u0439\u0448\u0435\u0439 \u0440\u0430\u0431\u043E\u0442\u044B \u0441 \u043D\u0438\u043C"), /*#__PURE__*/react.createElement("div", {
+    className: "dropzone"
+  }, /*#__PURE__*/react.createElement("input", {
+    type: "file",
+    className: "dropzone__file-hidden",
+    name: "file",
+    onChange: e => {
+      handleInput(e);
+    }
+  }), /*#__PURE__*/react.createElement("div", {
+    className: "dropzone__content"
+  }, /*#__PURE__*/react.createElement("img", {
+    src: imgUpload,
+    alt: "upload",
+    className: "dropzone__img"
+  }), /*#__PURE__*/react.createElement("div", {
+    className: "dropzone__text"
+  }, /*#__PURE__*/react.createElement("h4", {
+    className: "dropzone__title"
+  }, "\u0412\u044B\u0431\u0435\u0440\u0438\u0442\u0435 \u0438\u043B\u0438 \u043F\u0435\u0440\u0435\u0442\u0430\u0449\u0438\u0442\u0435 \u0444\u0430\u0439\u043B \u0441 \u0438\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u0435\u043C \u0434\u043B\u044F \u0434\u0430\u043B\u044C\u043D\u0435\u0439\u0448\u0435\u0433\u043E \u0440\u0430\u0441\u043F\u043E\u0437\u043D\u0430\u0432\u0430\u043D\u0438\u044F"), /*#__PURE__*/react.createElement("p", {
+    className: "dropzone__descrip"
+  }, "\u041C\u0430\u043A\u0441\u0438\u043C\u0430\u043B\u044C\u043D\u044B\u0439 \u0440\u0430\u0437\u043C\u0435\u0440 \u0444\u0430\u0439\u043B\u0430 2 Mb")))), /*#__PURE__*/react.createElement("div", {
+    className: "window__language-block"
+  }, /*#__PURE__*/react.createElement("select", {
+    name: "window-lang",
+    id: "window-lang",
+    className: "window__language",
+    value: form.language,
+    onChange: e => {
+      handleInput(e);
+    }
+  }, /*#__PURE__*/react.createElement("option", {
+    className: "window__language-option window__language-option_none",
+    value: "none",
+    disabled: true,
+    selected: true
+  }, "\u0412\u044B\u0431\u0435\u0440\u0435\u0442\u0435 \u044F\u0437\u044B\u043A \u0442\u0435\u043A\u0441\u0442\u0430:"), /*#__PURE__*/react.createElement("option", {
+    className: "window__language-option",
+    value: "rus"
+  }, "\u0420\u0443\u0441\u0441\u043A\u0438\u0439"), /*#__PURE__*/react.createElement("option", {
+    className: "window__language-option",
+    value: "usa"
+  }, "\u0410\u043D\u0433\u043B\u0438\u0439\u0441\u043A\u0438\u0439"))), /*#__PURE__*/react.createElement("div", {
+    className: "window__upload-btn-block"
+  }, /*#__PURE__*/react.createElement("button", {
+    className: "window__upload-btn btn",
+    onClick: e => {
+      handlerFormBtn(e, formData);
+    }
+  }, "\u0417\u0410\u0413\u0420\u0423\u0417\u0418\u0422\u042C")));
+}
+
+
+;// CONCATENATED MODULE: ./src/js/components/TopSection.tsx
+
+
+
+function TopSection(props) {
+  const {
+    handlerFormBtn
+  } = props;
   return /*#__PURE__*/react.createElement("section", {
     className: "top-section"
   }, /*#__PURE__*/react.createElement("div", {
@@ -13278,49 +13381,9 @@ function TopSection() {
     className: "main-content__btn btn-text"
   }, "\u041F\u041E \u0422\u0415\u041A\u0421\u0422\u0423")), /*#__PURE__*/react.createElement("div", {
     className: "window-wrapper"
-  }, /*#__PURE__*/react.createElement("form", {
-    className: "window"
-  }, /*#__PURE__*/react.createElement("div", {
-    className: "window__helper"
-  }, "\u0417\u0430\u0433\u0440\u0443\u0437\u0438\u0442\u0435 \u0444\u0430\u0439\u043B \u0444\u043E\u0440\u043C\u0430\u0442\u0430 JPG \u0438 \u0440\u0430\u0441\u043F\u043E\u0437\u043D\u0430\u0439\u0442\u0435 \u0441\u043E\u0434\u0435\u0440\u0436\u0430\u0449\u0438\u0439\u0441\u044F \u0432 \u043D\u0451\u043C \u0442\u0435\u043A\u0441\u0442 \u0434\u043B\u044F \u0434\u0430\u043B\u044C\u043D\u0435\u0439\u0448\u0435\u0439 \u0440\u0430\u0431\u043E\u0442\u044B \u0441 \u043D\u0438\u043C"), /*#__PURE__*/react.createElement("div", {
-    className: "dropzone"
-  }, /*#__PURE__*/react.createElement("input", {
-    type: "file",
-    className: "dropzone__file-hidden"
-  }), /*#__PURE__*/react.createElement("div", {
-    className: "dropzone__content"
-  }, /*#__PURE__*/react.createElement("img", {
-    src: imgUpload,
-    alt: "upload",
-    className: "dropzone__img"
-  }), /*#__PURE__*/react.createElement("div", {
-    className: "dropzone__text"
-  }, /*#__PURE__*/react.createElement("h4", {
-    className: "dropzone__title"
-  }, "\u0412\u044B\u0431\u0435\u0440\u0438\u0442\u0435 \u0438\u043B\u0438 \u043F\u0435\u0440\u0435\u0442\u0430\u0449\u0438\u0442\u0435 \u0444\u0430\u0439\u043B \u0441 \u0438\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u0435\u043C \u0434\u043B\u044F \u0434\u0430\u043B\u044C\u043D\u0435\u0439\u0448\u0435\u0433\u043E \u0440\u0430\u0441\u043F\u043E\u0437\u043D\u0430\u0432\u0430\u043D\u0438\u044F"), /*#__PURE__*/react.createElement("p", {
-    className: "dropzone__descrip"
-  }, "\u041C\u0430\u043A\u0441\u0438\u043C\u0430\u043B\u044C\u043D\u044B\u0439 \u0440\u0430\u0437\u043C\u0435\u0440 \u0444\u0430\u0439\u043B\u0430 2 Mb")))), /*#__PURE__*/react.createElement("div", {
-    className: "window__language-block"
-  }, /*#__PURE__*/react.createElement("select", {
-    name: "window-lang",
-    id: "window-lang",
-    className: "window__language"
-  }, /*#__PURE__*/react.createElement("option", {
-    className: "window__language-option window__language-option_none",
-    value: "none",
-    disabled: true,
-    selected: true
-  }, "\u0412\u044B\u0431\u0435\u0440\u0435\u0442\u0435 \u044F\u0437\u044B\u043A \u0442\u0435\u043A\u0441\u0442\u0430:"), /*#__PURE__*/react.createElement("option", {
-    className: "window__language-option",
-    value: "rus"
-  }, "\u0420\u0443\u0441\u0441\u043A\u0438\u0439"), /*#__PURE__*/react.createElement("option", {
-    className: "window__language-option",
-    value: "usa"
-  }, "\u0410\u043D\u0433\u043B\u0438\u0439\u0441\u043A\u0438\u0439"))), /*#__PURE__*/react.createElement("div", {
-    className: "window__upload-btn-block"
-  }, /*#__PURE__*/react.createElement("button", {
-    className: "window__upload-btn btn"
-  }, "\u0417\u0410\u0413\u0420\u0423\u0417\u0418\u0422\u042C"))))));
+  }, /*#__PURE__*/react.createElement(FormFile, {
+    handlerFormBtn: handlerFormBtn
+  }))));
 }
 
 
@@ -13521,9 +13584,19 @@ function Capabilities() {
 
 
 function Main() {
+  const handlerFormBtn = (e, formData) => {
+    e.preventDefault();
+    fetch('http://benzobak.local/php_less/benzospell/converte.php', {
+      method: 'POST',
+      body: formData
+    }).then(res => res.json()).then(res => console.log(res)).catch(e => console.log(e));
+  };
+
   return /*#__PURE__*/react.createElement("div", {
     className: "main"
-  }, /*#__PURE__*/react.createElement(TopSection, null), /*#__PURE__*/react.createElement(Guide, null), /*#__PURE__*/react.createElement(Formats, null), /*#__PURE__*/react.createElement(Advantages, null), /*#__PURE__*/react.createElement(Capabilities, null));
+  }, /*#__PURE__*/react.createElement(TopSection, {
+    handlerFormBtn: handlerFormBtn
+  }), /*#__PURE__*/react.createElement(Guide, null), /*#__PURE__*/react.createElement(Formats, null), /*#__PURE__*/react.createElement(Advantages, null), /*#__PURE__*/react.createElement(Capabilities, null));
 }
 
 
@@ -13976,7 +14049,6 @@ var scrollMagick = function scrollMagick() {
 
   for (var _i3 = 1; _i3 <= capabilitiesItemLength; _i3++) {
     if (screenWidth < 540) {
-      console.log(".capabilities__item".concat(_i3));
       activateAnim(".capabilities__item".concat(_i3), ".capabilities__item".concat(_i3), "swipeOutBottom");
     } else {
       activateAnim(".advantages__item_last", ".capabilities__item".concat(_i3), "swipeOutBottom");
@@ -14014,11 +14086,11 @@ document.addEventListener("DOMContentLoaded", e => {
   menuHover(".header__li");
   dropzone(".dropzone__file-hidden", ".dropzone");
   burgerMenu(".burger-menu");
-  animation(".main-content__title", "windowAnim", 300);
-  animation(".main-content__descrip", "windowAnim", 500);
-  animation(".window", "windowAnim", 1200);
-  animation(".btn-filte", "windowAnim", 1200);
-  animation(".btn-text", "windowAnim", 1200);
+  animation(".main-content__title", "windowAnim", 0);
+  animation(".main-content__descrip", "windowAnim", 0);
+  animation(".window", "windowAnim", 0);
+  animation(".btn-filte", "windowAnim", 0);
+  animation(".btn-text", "windowAnim", 0);
   scrollMagick();
 });
 })();
