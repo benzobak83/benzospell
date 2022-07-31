@@ -1,0 +1,37 @@
+html {
+  font-family: "Open Sans", sans-serif;
+}
+html, body {
+  overflow-x: hidden;
+}
+.main {
+  min-height: calc(100vh - 75px - 71.2px);
+}
+.title {
+  font-size: 40px;
+  margin-bottom: 40px;
+  color: #0a1524;
+  font-weight: bold;
+  text-align: center;
+}
+.wrapper {
+  max-width: 1080px;
+  margin: 0 auto;
+
+}
+.wrapper-small-height {
+  min-height: calc(100vh - 75px - 70px);
+}
+.line {
+  width: 66px;
+  height: 6px;
+  margin: 0 auto 55px;
+  background: #399fdb;
+  opacity: 0;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  color: #0a1524;
+}

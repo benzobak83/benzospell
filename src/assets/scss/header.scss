@@ -1,0 +1,150 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  height: 75px;
+  max-height: 75px;
+  width: 100%;
+  align-items: center;
+  position: relative;
+  border-bottom: 1.5px solid rgb(134, 134, 134);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+  &__logo {
+    max-height: 100%;
+    margin-left: 30px;
+    cursor: pointer;
+    .header__img-logo {
+      max-height: 60px;
+      max-width: 145px;
+      height: 60px;
+      width: 145px;
+      @media screen and (max-width: 420px) {
+        height: 90%;
+        width: 90%;
+      }
+    }
+    @media screen and (max-width: 920px) {
+      margin-left: 5px;
+    }
+  }
+  &__ul {
+    display: flex;
+    a {
+      text-decoration: none;
+    }
+    a.active.selected .header__li  {
+      border-bottom: 2px solid rgb(226, 154, 72);
+    }
+    .header__li {
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      font-size: 20px;
+      font-weight: bold;
+      height: 76px;
+      min-width: 100px;
+      color: rgba(0, 0, 0, 0.842);
+      transition: 0.2s;
+      cursor: pointer;
+      border: 2px solid transparent;
+      padding: 0px 20px;
+      &:not(.header__li_active):hover {
+        border-bottom: 2px solid rgb(226, 154, 72);
+        color: rgb(76, 112, 122);
+      }
+      &:not(:last-child) {
+        margin-right: 50px;
+      }
+    
+      @media screen and (max-width: 920px) {
+        display: none;
+      }
+    }
+  }
+  &__settings {
+    display: flex;
+    max-height: 100%;
+    align-items: center;
+    .header__language {
+      margin-right: 40px;
+      cursor: pointer;
+      .header__lang-text {
+        @media screen and (max-width: 420px) {
+          display: none;
+        }
+      }
+      &:hover .header__arrow-down {
+        transform: rotate(185deg);
+      }
+      .header__arrow-down {
+        margin-left: 5px;
+        transition: all 0.3s;
+        height: 12px;
+      }
+    }
+    .header__menu-btn {
+      display: none;
+      .header__img-menu {
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translate(0, -50%);
+        max-width: 30px;
+      }
+    }
+    @media screen and (max-width: 920px) {
+      margin-right: 30px;
+    }
+  }
+}
+
+.icon-flags_ru {
+  background-image: url("../img/flags.png");
+  width: 23px;
+  height: 15px;
+  display: inline-block;
+  vertical-align: middle;
+  background-position: -46px -15px;
+}
+
+// menu -> cross
+.header {
+  .burger-menu {
+    display: none;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translate(0, -50%);
+    @media screen and (max-width: 920px) {
+      display: block;
+    }
+  }
+
+  .bar1,
+  .bar2,
+  .bar3 {
+    width: 32px;
+    height: 4px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+
+  /* Rotate first bar */
+  .change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+  }
+
+  /* Fade out the second bar */
+  .change .bar2 {
+    opacity: 0;
+  }
+
+  /* Rotate last bar */
+  .change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+  }
+}

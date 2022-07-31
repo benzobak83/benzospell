@@ -1,0 +1,23 @@
+.swipeOutLeft {
+  transform: translate(0%) !important;
+
+  opacity: 1 !important;
+}
+.swipeOutRight {
+  transform: translate(0%) !important;
+
+  opacity: 1 !important;
+}
+.swipeOutBottom {
+  transform: translate(0%, 0%) !important;
+  opacity: 1 !important;
+}
+.fadeIn {
+  opacity: 1 !important;
+}
+
+.windowAnim {
+  transform: translate(0%) !important;
+  transition: transform 1s, opacity 0.7s;
+  opacity: 1 !important;
+}
